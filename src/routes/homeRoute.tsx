@@ -4,6 +4,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import { HomeRootTabParamList } from './homeTypes';
 import { DashboardScreen, MessageScreen, SearchScreen } from '../screens/home';
 import { colors } from '../theme/colors';
+import SearchRoute from './searchRoute';
 
 
 const Tab = createBottomTabNavigator<HomeRootTabParamList>();
