@@ -7,7 +7,6 @@ const SearchScreen = () => {
     return (
         <>
             <Header
-                title='Search'
                 placeholderText='Search'
                 showSearchBar={true} />
             <SearchRoute />
