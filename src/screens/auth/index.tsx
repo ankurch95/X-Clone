@@ -8,9 +8,9 @@ import { AuthRootStackParamList } from '../../routes/authTypes'
 
 type Props = NativeStackScreenProps<AuthRootStackParamList>
 export default function AuthScreen({ navigation }: Props) {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [passwordVisible, setPasswordVisible] = useState(true)
+  const [username, setUsername] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [passwordVisible, setPasswordVisible] = useState<boolean>(true)
 
   const togglePassword = () => {
     setPasswordVisible(!passwordVisible)
@@ -20,7 +20,7 @@ export default function AuthScreen({ navigation }: Props) {
     <View style={style.container}>
       <Text style={style.welcomeText}>Welcome Back,</Text>
 
-      <View style={{ marginTop: 150 }}>
+      <View style={{ marginTop: 50 }}>
         <TextInput
           value={username}
           mode='outlined'
@@ -40,6 +40,8 @@ export default function AuthScreen({ navigation }: Props) {
           activeOutlineColor={colors.PRIMARY_COLOR}
           right={<TextInput.Icon icon={passwordVisible ? "eye-off" : "eye"} onPress={() => togglePassword()} />} />
 
+        <Text style={style.passwordText}
+          onPress={() => navigation.navigate('ForgotPasswordScreen')}>Forgot Password</Text>
 
         <Button
           mode='contained'
@@ -47,7 +49,7 @@ export default function AuthScreen({ navigation }: Props) {
           labelStyle={{ color: colors.WHITE_COLOR }}>
           Login
         </Button>
-        <Text style={{ marginTop: 20, textAlign: 'center' }}>OR</Text>
+        <Text style={style.orText}>OR</Text>
         <Button
           mode='outlined'
           style={style.buttonOutline}

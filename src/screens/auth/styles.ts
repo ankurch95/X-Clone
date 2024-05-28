@@ -17,6 +17,14 @@ const style = StyleSheet.create({
         backgroundColor: colors.WHITE_COLOR,
         marginTop: 20
     },
+    passwordText: {
+        textAlign: 'right',
+        marginTop: 20
+    },
+    orText: {
+        marginTop: 20,
+        textAlign: 'center'
+    },
     button: {
         marginTop: 20,
         borderRadius: 4,
