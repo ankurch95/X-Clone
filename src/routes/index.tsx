@@ -7,9 +7,9 @@ import DrawerRoute from './drawerRoute'
 export default function Routes() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.WHITE_COLOR }}>
-      <AuthRoute />
+      {/* <AuthRoute /> */}
       {/* <HomeRoute/> */}
-      {/* <DrawerRoute/> */}
+      <DrawerRoute/>
     </SafeAreaView>
   )
 }

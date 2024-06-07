@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { colors } from "../../theme/colors";
-import { FONTS_SIZE } from "../../theme/fonts";
+import { FONTS, FONTS_SIZE } from "../../theme/fonts";
 
 const style = StyleSheet.create({
     container: {
@@ -10,8 +10,8 @@ const style = StyleSheet.create({
     },
     welcomeText: {
         fontSize: FONTS_SIZE.xl,
-        fontWeight: '600',
-        marginTop: 50
+        marginTop: 50,
+        fontFamily: FONTS.FontsRegular
     },
     textInput: {
         backgroundColor: colors.WHITE_COLOR,
@@ -19,11 +19,13 @@ const style = StyleSheet.create({
     },
     passwordText: {
         textAlign: 'right',
-        marginTop: 20
+        marginTop: 20,
+        fontFamily: FONTS.FontsMedium
     },
     orText: {
         marginTop: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: FONTS.FontsMedium
     },
     button: {
         marginTop: 20,
@@ -34,7 +36,8 @@ const style = StyleSheet.create({
         marginTop: 20,
         borderRadius: 4,
         backgroundColor: colors.WHITE_COLOR,
-        borderColor: colors.PRIMARY_COLOR
+        borderColor: colors.PRIMARY_COLOR,
+        fontFamily: FONTS.FontsMedium
     },
 });
 
