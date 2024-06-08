@@ -11,8 +11,8 @@ export const TweetCard = () => {
             <Card.Title
                 title="Ankur Chauhan"
                 titleStyle={style.title}
-                right={props => <Text style={{ marginHorizontal: 10, fontFamily: FONTS.FontsRegular }}>9:41</Text>}
-                left={props => <Avatar.Image {...props} source={{ uri: 'https://picsum.photos/500' } }  />} />
+                right={props => <Text style={style.timeText}>9:41</Text>}
+                left={props => <Avatar.Image {...props} source={{ uri: 'https://picsum.photos/500' }} />} />
             <Card.Content>
                 <Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cum rerum vero quidem, nulla accusamus laudantium ratione atque porro voluptatem! Iusto qui rerum cum odit accusamus obcaecati deleniti saepe itaque!</Paragraph>
             </Card.Content>
@@ -22,22 +22,34 @@ export const TweetCard = () => {
                 style={{ margin: 10 }} />
             <View style={style.statView}>
                 <Pressable style={style.statSubView}>
-                    <Icon iconName="message-circle" iconSize={24} color={colors.BLACK_COLOR} />
+                    <Icon
+                        iconName="message-circle"
+                        iconSize={17}
+                        color={colors.BLACK_COLOR} />
                     <Text style={style.statText}>10</Text>
                 </Pressable>
 
                 <Pressable style={style.statSubView}>
-                    <Icon iconName="repeat" iconSize={24} color={colors.BLACK_COLOR} />
+                    <Icon
+                        iconName="repeat"
+                        iconSize={17}
+                        color={colors.BLACK_COLOR} />
                     <Text style={style.statText}>5</Text>
                 </Pressable>
 
                 <Pressable style={style.statSubView}>
-                    <Icon iconName="heart" iconSize={24} color={colors.BLACK_COLOR} />
+                    <Icon
+                        iconName="heart"
+                        iconSize={17}
+                        color={colors.BLACK_COLOR} />
                     <Text style={style.statText}>100</Text>
                 </Pressable>
 
                 <Pressable style={style.statSubView}>
-                    <Icon iconName="bar-chart-2" iconSize={24} color={colors.BLACK_COLOR} />
+                    <Icon
+                        iconName="bar-chart-2"
+                        iconSize={17}
+                        color={colors.BLACK_COLOR} />
                     <Text style={style.statText}>1110</Text>
                 </Pressable>
             </View>
@@ -59,7 +71,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginVertical: 20,
+        marginVertical: 15,
         marginHorizontal: 10
     },
     statSubView: {
@@ -70,8 +82,12 @@ const style = StyleSheet.create({
     },
     statText: {
         marginLeft: 5,
-        fontSize: FONTS_SIZE.base,
+        fontSize: FONTS_SIZE.sm,
         fontFamily: FONTS.FontsMedium
+    },
+    timeText: {
+        marginHorizontal: 10,
+        fontFamily: FONTS.FontsRegular
     }
 
 });

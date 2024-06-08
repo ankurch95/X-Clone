@@ -1,26 +1,51 @@
-import { View, ScrollView } from 'react-native'
-import React from 'react'
+import { View, ScrollView, Text } from 'react-native'
+import React, { useEffect, useRef, useState } from 'react'
 import { Header } from '../../../components/Header';
-import { TweetCard } from '../../../components';
+import { FabButton, TweetCard } from '../../../components';
+import Animated, { FadeIn, FadeOut, Layout } from 'react-native-reanimated';
 
 const DashboardScreen = () => {
-  return (
-      <View>
-        <Header
-          title={''}
-          placeholderText={''}
-        />
+  const [visibility, setVisibility] = useState(true)
+  const initialMode = useRef<boolean>(true);
 
-        <ScrollView>
-          <View style={{ marginBottom: 100 }}>
-            <TweetCard />
-            <TweetCard />
-            <TweetCard />
-            <TweetCard />
-            <TweetCard />
-          </View>
-        </ScrollView>
-      </View>
+  useEffect(() => {
+    initialMode.current = false;
+  }, []);
+
+  const items = [];
+  for (let i = 0; i < 10; i++) {
+    items.push(
+      <Animated.View
+        key={i}
+        entering={initialMode.current ? FadeIn.delay(0) : FadeIn}
+        exiting={FadeOut}
+        layout={Layout.delay(100)}>
+        <TweetCard key={i} />
+      </Animated.View>
+    );
+  }
+
+  return (
+    <View>
+      <Header
+        title={''}
+        placeholderText={''}
+      />
+      <ScrollView>
+        <View style={{ marginBottom: 100 }}>
+          {visibility &&
+            <View style={{ margin: 10, backgroundColor: 'white', height: 100 }}>
+              <Text>Add Tweet</Text>
+            </View>
+          }
+          {items}
+        </View>
+      </ScrollView>
+
+      <FabButton
+        icon='plus'
+        onPress={() => setVisibility(!visibility)} />
+    </View>
   )
 }
 
