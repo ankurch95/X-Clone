@@ -26,7 +26,7 @@ const DashboardScreen = () => {
   }
 
   return (
-    <View>
+    <>
       <Header
         title={''}
         placeholderText={''}
@@ -45,7 +45,7 @@ const DashboardScreen = () => {
       <FabButton
         icon='plus'
         onPress={() => setVisibility(!visibility)} />
-    </View>
+    </>
   )
 }
 

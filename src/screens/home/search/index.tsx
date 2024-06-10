@@ -1,7 +1,7 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import SearchRoute from '../../../routes/searchRoute'
 import { Header } from '../../../components/Header'
+import { FabButton } from '../../../components'
 
 const SearchScreen = () => {
     return (
@@ -10,6 +10,7 @@ const SearchScreen = () => {
                 placeholderText='Search'
                 showSearchBar={true} />
             <SearchRoute />
+            <FabButton icon={'plus'} onPress={() => console.log('dsfsdf')} />
         </>
 
     )

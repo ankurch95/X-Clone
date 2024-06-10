@@ -1,12 +1,20 @@
-import { View, Text } from 'react-native'
+import { ScrollView } from 'react-native'
 import React from 'react'
+import { TrendingCard } from '../../../../components';
 
 const ForYouScreen = () => {
+  const trendingItem = [];
+  for (let i = 0; i < 10; i++) {
+    trendingItem.push(
+      <TrendingCard key={i} />
+    );
+  }
+
   return (
-    <View>
-      <Text>ForYouScreen</Text>
-    </View>
+    <ScrollView>
+      {trendingItem}
+    </ScrollView>
   )
 }
 
-export default ForYouScreen
+export default ForYouScreen;

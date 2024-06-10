@@ -1,11 +1,19 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
+import { TrendingCard } from '../../../../components'
 
 const NewsScreen = () => {
+  const newsItem = []
+  for (let i = 0; i < 5; i++) {
+    newsItem.push(
+      <TrendingCard />
+    )
+  }
+
   return (
-    <View>
-      <Text>NewsScreen</Text>
-    </View>
+    <ScrollView>
+      {newsItem}
+    </ScrollView>
   )
 }
 
