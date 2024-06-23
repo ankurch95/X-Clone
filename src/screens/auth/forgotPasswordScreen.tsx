@@ -7,7 +7,6 @@ import { colors } from '../../theme/colors'
 const ForgotPasswordScreen = () => {
   const [username, setUsername] = useState<string>('')
 
-
   return (
     <View style={style.container}>
       <Text style={style.welcomeText}>Forgot Password,</Text>
