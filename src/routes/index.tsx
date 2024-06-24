@@ -9,9 +9,9 @@ export default function Routes() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.WHITE_COLOR }}>
       <StatusBar backgroundColor={colors.WHITE_COLOR} barStyle={'dark-content'}/>
-      <AuthRoute />
+      {/* <AuthRoute /> */}
       {/* <HomeRoute/> */}
-      {/* <DrawerRoute/> */}
+      <DrawerRoute/>
     </SafeAreaView>
   )
 }
