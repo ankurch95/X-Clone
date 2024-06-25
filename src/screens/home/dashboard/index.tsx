@@ -5,6 +5,7 @@ import { FabButton, TweetCard } from '../../../components';
 import Animated, { FadeIn, FadeOut, Layout } from 'react-native-reanimated';
 import Video, { VideoRef } from 'react-native-video';
 import { Card } from 'react-native-paper';
+import style from './styles';
 
 const DashboardScreen = () => {
   const [visibility, setVisibility] = useState(true)
@@ -64,17 +65,20 @@ const DashboardScreen = () => {
               resizeMode='cover'
               repeat={true}
               controls
-              style={{
-                overflow: 'hidden',
-                // position: 'absolute',
-                borderRadius: 10,
-                height: 300,
-                width: '100%',
-                top: 0,
-                left: 0,
-                bottom: 0,
-                right: 0,
-              }}
+              style={style.videoView}
+            />
+          </Card>
+
+          <Card style={{ margin: 10,borderRadius:10 }}>
+            <Video
+              source={{ uri: 'https://www.youtube.com/embed/DGQwd1_dpuc' }}
+              ref={videoRef}
+              onBuffer={onBuffer}
+              onError={onError}
+              resizeMode='cover'
+              repeat={true}
+              controls
+              style={style.videoView}
             />
           </Card>
         </View>

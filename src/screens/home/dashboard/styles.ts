@@ -28,7 +28,17 @@ const style = StyleSheet.create({
         marginLeft: 5,
         fontSize: FONTS_SIZE.base,
         fontFamily: FONTS.FontsMedium
-    }
+    },
+    videoView:{
+        overflow: 'hidden',
+        borderRadius: 10,
+        height: 300,
+        width: '100%',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+      }
 
 });
 
